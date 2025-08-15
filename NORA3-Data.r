@@ -34,7 +34,7 @@ Dir.Data <- file.path(Dir.Base, "Data")
 
 # DATA ====================================================================
 ## GLOF Event Information -------------------------------------------------
-# locs_df <- read_xlsx(file.path(Dir, "glof_after1979.xlsx"))
+# locs_df <- read_xlsx(file.path(Dir.Data, "glof_after1979.xlsx"))
 locs_df <- read.csv(file.path(Dir.Data, "glof_after1979_withReprojection.csv"))
 colnames(locs_df)[c(12, 13)] <- c("Lon", "Lat")
 
@@ -59,7 +59,7 @@ for (Loc in 1:nrow(locs_df)) {
 
         Name <- paste(locs_df$Glacier.name[Loc], "-", Variable)
 
-        FinalFile <- file.path(Dir, paste0(paste(locs_df$Glacier.name[Loc], new_str, sep = "_"), ".csv"))
+        FinalFile <- file.path(Dir.Data, paste0(paste(locs_df$Glacier.name[Loc], new_str, sep = "_"), ".csv"))
         if (file.exists(FinalFile)) {
             CSVcontent <- read.csv(FinalFile)[, -1]
             colnames(CSVcontent)
@@ -95,7 +95,7 @@ for (Loc in 1:nrow(locs_df)) {
             DateStart = Start,
             DateStop = Stop,
             Leadtime = 9,
-            Dir = Dir,
+            Dir = Dir.Data,
             Cores = 1, # 1
             FileName = "Temporary.nc",
             WriteFile = FALSE
