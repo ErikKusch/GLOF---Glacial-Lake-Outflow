@@ -1,19 +1,5 @@
-while(!exists("Done")){
+while (!exists("Done")) {
     try(source("NACGLOF.r"))
+    unlink(file.path(Dir.Data, pattern = "TEMP_"))
     closeAllConnections()
 }
-
-
-# library(doSNOW)
-# library(parallel)
-
-# checkme <- function(Cores){
-
-# cl <- parallel::makeCluster(2)
-# doSNOW::registerDoSNOW(cl)
-# stopCluster(cl)
-# print("Stopping")
-# return(1+1)
-# }
-
-

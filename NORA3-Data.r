@@ -151,9 +151,6 @@ for (Loc in 1:nrow(locs_df)) {
             unlink(list.files(Dir.Data, pattern = paste0(names(Vars)[VarPos], ".nc"), full.names = TRUE))
         } else {
             if (names(Vars)[VarPos] != names(Vars)[VarPos + 1]) {
-                print(names(Vars)[VarPos])
-                print(names(Vars)[VarPos + 1])
-                print("Deleting")
                 unlink(list.files(Dir.Data, pattern = paste0(names(Vars)[VarPos], ".nc"), full.names = TRUE))
             }
         }
