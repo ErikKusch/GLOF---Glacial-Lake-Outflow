@@ -148,10 +148,10 @@ for (Loc in 1:nrow(locs_df)) {
         }
 
         if (VarPos == length(Vars)) {
-            unlink(list.files(Dir.Data, pattern = paste0(names(Vars)[VarPos], ".nc"), full.names = TRUE))
+            unlink(list.files(Dir.Data, pattern = "TEMP_", full.names = TRUE))
         } else {
             if (names(Vars)[VarPos] != names(Vars)[VarPos + 1]) {
-                unlink(list.files(Dir.Data, pattern = paste0(names(Vars)[VarPos], ".nc"), full.names = TRUE))
+                unlink(list.files(Dir.Data, pattern = "TEMP_", full.names = TRUE))
             }
         }
     }
