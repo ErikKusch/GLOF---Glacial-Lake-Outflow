@@ -47,6 +47,7 @@ Vars <- Vars[order(names(Vars), decreasing = TRUE)]
 Times <- locs_df$Periods.of.interest
 for (Loc in 1:nrow(locs_df)) {
     print(paste("####### ", Loc, "/", nrow(locs_df)))
+    print(locs_df[Loc,])
     for (VarPos in 1:length(Vars)) {
         Variable <- Vars[VarPos]
         print(paste("----- ", Variable))
